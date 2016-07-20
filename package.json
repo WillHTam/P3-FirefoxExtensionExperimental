@@ -1,0 +1,16 @@
+{
+  "title": "Stasher",
+  "name": "stasher",
+  "version": "0.0.0",
+  "description": "Add-on to Stash pages",
+  "main": "index.js",
+  "author": "William",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
