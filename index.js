@@ -7,8 +7,6 @@ let button = ActionButton({
   id: 'mr-button',
   label: 'Stash This Page',
   icon: {
-    '16': './icon-16.png',
-    '32': './icon-32.png',
     '64': './icon-64.png'
   },
   onClick: function (state) {
@@ -19,15 +17,17 @@ let button = ActionButton({
       text: 'Click to stash.',
       onClick: function () {
         console.log('Notification click recorded')
-        clipboard.set(url2)
     // ! request begins !
         Request({
           url: 'https://project3pockety.herokuapp.com/resources',
-          headers: {email: 'xxxxx@xxxx.com', auth_token: '50499ab4-125c-4bf0-8268-6b0459f60107'},
-          content: {url: url2},
+          headers: {email: 'angel@angel.com', auth_token: '50499ab4-125c-4bf0-8268-6b0459f60107'},
+          content: {url: url2, tags: 'AddedWithStashr'},
           onComplete: function (response) {
             console.log('Request completed!')
-            console.log('response: ' + response.body)
+            require('sdk/notifications').notify({
+              title: 'Complete!',
+              text: 'This page has been Stashed'
+            })
           }
         }).post()
     // ! request ends
