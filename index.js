@@ -20,7 +20,7 @@ let button = ActionButton({
     // ! request begins !
         Request({
           url: 'https://project3pockety.herokuapp.com/resources',
-          headers: {email: 'angel@angel.com', auth_token: 'af168421-d31d-410b-a5ba-bbc6bc4a2fb8'},
+          headers: {email: 'cat@cat.com', auth_token: '55dc5e17-bff8-42f8-aadd-1172e6fc9749'},
           content: {url: url2, tags: 'AddedWithStashr'},
           onComplete: function (response) {
             console.log('Request completed!')
