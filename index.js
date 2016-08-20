@@ -20,8 +20,11 @@ let button = ActionButton({
     // ! request begins !
         Request({
           url: 'https://project3pockety.herokuapp.com/resources',
-          headers: {email: 'angel@angel.com', auth_token: 'af168421-d31d-410b-a5ba-bbc6bc4a2fb8'},
           content: {url: url2, tags: 'AddedWithStashr'},
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader('email', window.localStorage['email'])
+            xhr.setRequestHeader('auth_token', window.localStorage['auth_token'])
+          },
           onComplete: function (response) {
             console.log('Request completed!')
             require('sdk/notifications').notify({
